@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login</title>
+    <style>
+        body {
+            background-color: #f0f2f5; /* Original Facebook background */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #ffffff; /* White container */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+        h2 {
+            text-align: center;
+            color: #1877f2; /* Facebook blue */
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #dddfe2; /* Light grey border */
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background-color: #1877f2; /* Facebook blue */
+            color: #ffffff; /* White text */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #166fe5; /* Slightly darker blue on hover */
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #606770; /* Light grey text */
+            font-size: 14px;
+        }
+        .footer a {
+            color: #1877f2; /* Facebook blue for links */
+            text-decoration: none;
+        }
+        .joke {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda; /* Green background for jokes */
+            border-radius: 5px;
+            color: #155724; /* Dark green text */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Log into Facebook</h2>
+        <form id="loginForm">
+            <input type="text" placeholder="Email or Phone" required>
+            <input type="password" placeholder="Password" required>
+            <input type="submit" value="Log In">
+        </form>
+        <div class="footer">
+            <a href="#">Forgot password?</a> · <a href="#">Sign up for Facebook</a>
+        </div>
+        <div id="jokeContainer" class="joke" style="display: none;"></div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            // Simulate login success
+            loginSuccess();
+        });
+
+        function loginSuccess() {
+            // Display joke after successful login
+            document.getElementById("jokeContainer").innerHTML = "If you're seeing this message, your Facebook information is currently accessable by Joseph Dela Cruz Bayoneta :)";
+            document.getElementById("jokeContainer").style.display = "block"; // Show joke container
+        }
+    </script>
+</body>
+</html>
